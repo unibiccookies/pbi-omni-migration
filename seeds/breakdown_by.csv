@@ -1,0 +1,4 @@
+Breakdown_by,Breakdown_by_Fields,Breakdown_by_Order
+Cloud,'RI/CSP'[Cloud],0
+Payer Group,'RI/CSP'[payerGroup],1
+Purchase Type,'RI/CSP'[purchaseType],2

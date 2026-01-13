@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_ri_csp
+    description: >
+      Staging table for Cloud Spend.
+      GRAIN: One row per resource allocation line item.
+      SOURCE: Manual export from Power BI 'RI/CSP' table.
+    columns:
+      - name: unique_key
+        description: "Primary key for the cost line item"
+        tests:
+          - not_null
+      - name: annual_cost
+        description: "Total annual cost of the resource"
+        tests:
+          - not_null
+      - name: payer_group
+        description: "Foreign key linking to the Mapping table"
+        tests:
+          - not_null
+          # This satisfies the "relationship tests" requirement 
+          # It checks: Does this payer_group actually exist in our mapping table?
+          # If this fails, it means we have costs for a department that doesn't exist.
+          - relationships:
+              to: ref('stg_mapping')
+              field: target_bus
+
+  - name: stg_rsu_users
+    description: "Staging table for User and Department hierarchy"
+    columns:
+      - name: user_id
+        description: "Unique identifier for the employee"
+        tests:
+          - not_null
+
+  - name: stg_mapping
+    description: "Bridge table connecting Business Units to Contacts"
+    columns:
+      - name: agreement_key
+        tests:
+          - not_null
