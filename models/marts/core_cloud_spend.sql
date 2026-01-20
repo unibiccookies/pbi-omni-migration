@@ -7,23 +7,27 @@ user_mappings as (
 )
 
 select
-    -- Cost Keys
     costs.unique_key,
     costs.payer_group,
     costs.reservation_type,
-    
-    -- Dates & Numbers
+
+    costs.purchase_account_id,
+
+    costs.status,
+    costs.scope,
+    costs.region,
+    costs.family as instance_family,
+
     costs.start_date,
     costs.end_date,
     costs.annual_cost,
-    
-    -- Categories
+
+    cast(null as double) as list_price,
+    cast(null as double) as savings_amount,
+
     costs.cloud_provider,
-    
-    -- FIX: Use the actual column "name" and alias it
     costs.name as service_name,
-    
-    -- Joined User Data
+
     user_mappings.owner_name,
     user_mappings.department_name,
     user_mappings.cost_center,
