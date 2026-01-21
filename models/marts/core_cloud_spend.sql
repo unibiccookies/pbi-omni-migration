@@ -10,6 +10,8 @@ select
     costs.unique_key,
     costs.payer_group,
     costs.reservation_type,
+    costs.purchase_account_name,
+
 
     costs.purchase_account_id,
 
