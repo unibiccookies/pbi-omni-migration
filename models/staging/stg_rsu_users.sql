@@ -1,45 +1,37 @@
 select
-    -- Identifiers
-    "UserID" as user_id,
-    "Username" as username,
-    "FullName" as full_name,
-    "ManagerID" as manager_id,
-    "ManagerUsername" as manager_username,
-    "ManagerFullName" as manager_full_name,
+    UserID as user_id,
+    Username as username,
+    FullName as full_name,
+    ManagerID as manager_id,
+    ManagerUsername as manager_username,
+    ManagerFullName as manager_full_name,
 
-    -- Department & Organization
-    "DepartmentID" as department_id,
-    "Department" as department_name,
-    "BusinessUnitCostCenter" as cost_center,
-    "BusinessTitle" as business_title,
-    "ManagementRole" as management_role,
+    DepartmentID as department_id,
+    Department as department_name,
+    BusinessUnitCostCenter as cost_center,
+    BusinessTitle as business_title,
+    ManagementRole as management_role,
     
-    -- Job Details
-    "JobFamily" as job_family,
-    "JobFamilyGroup" as job_family_group,
-    "JobLevel" as job_level,
-    "ManagerJobFamily" as manager_job_family,
+    JobFamily as job_family,
+    JobFamilyGroup as job_family_group,
+    JobLevel as job_level,
+    ManagerJobFamily as manager_job_family,
 
-    -- Location
-    "Country" as country,
-    "Location" as location,
-    "WorkAddress" as work_address,
+    Country as country,
+    Location as location,
+    WorkAddress as work_address,
 
-    -- Org Hierarchy Trees
-    "OrgTree" as org_tree,
-    "OrgTreeCalculated" as org_tree_calculated,
-    "WDSuppliedOrgTree" as wd_supplied_org_tree,
+    OrgTree as org_tree,
+    OrgTreeCalculated as org_tree_calculated,
+    WDSuppliedOrgTree as wd_supplied_org_tree,
 
-    -- Flags (True/False indicators)
-    "IsActive" as is_active,
-    "IsPeopleManager" as is_people_manager,
-    "IsSoftwareEngineerManager" as is_software_engineer_manager,
+    IsActive as is_active,
+    IsPeopleManager as is_people_manager,
+    IsSoftwareEngineerManager as is_software_engineer_manager,
 
-    -- Dates
-    "Created" as created_date,
-    "LastModified" as last_modified_date,
+    Created as created_date,
+    LastModified as last_modified_date,
 
-    -- Metrics
-    "Count_Contractor" as contractor_count
+    Count_Contractor as contractor_count
 
 from {{ ref('rsu_users') }}
