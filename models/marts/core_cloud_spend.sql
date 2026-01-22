@@ -12,8 +12,15 @@ select
     costs.reservation_type,
     costs.purchase_account_name,
 
-
+    costs.instance_count,
     costs.purchase_account_id,
+    costs.purchase_cost,
+    costs.purchase_expected_saving,
+    costs.purchase_type,
+
+    costs.discount_percent,
+    costs.new_total_product_coverage_percent,
+    costs.purchase_coverage_increase_percent,
 
     costs.status,
     costs.scope,
@@ -23,6 +30,10 @@ select
     costs.start_date,
     costs.end_date,
     costs.annual_cost,
+    costs.hourly_commit,
+    costs.renewal_date,
+    costs.renewal_time_period,
+    costs.date_loaded,
 
     cast(null as double) as list_price,
     cast(null as double) as savings_amount,
@@ -34,7 +45,8 @@ select
     user_mappings.department_name,
     user_mappings.cost_center,
     user_mappings.manager_full_name,
-    user_mappings.agreement_name
+    user_mappings.agreement_name,
+    user_mappings.is_active
 
 from costs
 left join user_mappings
