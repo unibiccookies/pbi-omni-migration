@@ -11,6 +11,7 @@ select
     costs.payer_group,
     costs.reservation_type,
     costs.purchase_account_name,
+    costs.name,
 
     costs.instance_count,
     costs.purchase_account_id,
