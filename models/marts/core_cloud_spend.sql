@@ -40,7 +40,6 @@ select
     cast(null as double) as savings_amount,
 
     costs.cloud_provider,
-    costs.name as service_name,
 
     user_mappings.owner_name,
     user_mappings.department_name,
