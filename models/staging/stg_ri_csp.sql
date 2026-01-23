@@ -7,7 +7,7 @@ select
     name as name,
 
     Cloud as cloud_provider,
-    trim(payerGroup) as payer_group, 
+    payerGroup as payer_group, 
     purchaseType as purchase_type,
     region as region,
     reservationType as reservation_type,
